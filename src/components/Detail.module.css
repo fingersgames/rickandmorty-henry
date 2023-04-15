@@ -1,0 +1,40 @@
+.Detail {
+    font-size:large;
+    text-align: center;
+    background-color: rgba(0, 255, 255, 0.582);
+    padding: 1%;
+    margin: 15px;
+    border-radius: 10px;
+    width: 24%;
+    color:brown;
+    font-weight: 600;
+    border-color:rgba(128, 24, 226, 0.945);
+    border-style: solid;
+
+}
+.Detail img{
+    border-radius: 10px;
+}
+.name {
+    color: black;
+    text-decoration: underline;
+    font-size: 180%;
+    font-weight: 900;
+
+}
+.boton{
+    color: rgb(185, 242, 250);
+    background-color: rgba(74, 10, 133, 0.945);
+    border-style: solid;
+    border-color:rgba(74, 10, 133, 0.945);
+    float: right;
+    border-radius: 20%;
+    font-size: 120%;
+    padding: 1%;
+    width: 8%;
+
+}
+.boton:hover{
+    background-color: rgba(115, 47, 179, 0.945);
+    border-color:rgba(153, 70, 231, 0.507);
+}

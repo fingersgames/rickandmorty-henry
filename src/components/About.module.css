@@ -1,0 +1,9 @@
+.about{
+    font-size:large;
+    text-align: center;
+    background-color: blueviolet;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 90%;
+}

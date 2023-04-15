@@ -1,0 +1,43 @@
+.card{
+    font-size:small;
+    text-align: center;
+    background-color: blueviolet;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 190px;
+    border-style: solid;
+    border-color: blueviolet;
+}
+.card:hover{
+    background-color:rgba(17, 136, 248, 0.418);
+    border-color:rgba(128, 24, 226, 0.945);
+}
+.card img{
+    border-radius: 5%;
+    width: 90%;
+}
+
+.boton{
+    color: rgb(185, 242, 250);
+    background-color: rgba(74, 10, 133, 0.945);
+    border-style: solid;
+    border-color:rgba(74, 10, 133, 0.945);
+    float: right;
+    border-radius: 20%;
+    font-size: 120%;
+    padding: 1%;
+    width: 15%;
+    margin: 2%;
+
+}
+.boton:hover{
+    background-color: rgba(115, 47, 179, 0.945);
+    border-color:rgba(153, 70, 231, 0.507);
+}
+
+
+.cardTitle{
+    font-size: 190%;
+    color: black;
+}
