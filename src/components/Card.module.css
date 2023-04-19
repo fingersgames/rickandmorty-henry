@@ -18,11 +18,11 @@
     width: 90%;
 }
 
-.boton{
+.botonClose{
     color: rgb(185, 242, 250);
     background-color: rgba(74, 10, 133, 0.945);
     border-style: solid;
-    border-color:rgba(74, 10, 133, 0.945);
+    border-color: rgba(74, 10, 133, 0.863);
     float: right;
     border-radius: 20%;
     font-size: 120%;
@@ -31,12 +31,46 @@
     margin: 2%;
 
 }
-.boton:hover{
+.botonClose:hover{
     background-color: rgba(115, 47, 179, 0.945);
-    border-color:rgba(153, 70, 231, 0.507);
+    border-color: rgba(74, 10, 133, 0.692);
 }
+.botonFavoriteOn{
+ 
+    color: rgb(255, 0, 0);
+    background-color: rgba(74, 10, 133, 0.945);
+    border-style:solid;
+    border-color:rgba(0, 0, 0, 0);
+    float: left;
+    border-radius: 20%;
+    font-size: 120%;
+    padding: 1%;
+    width: 15%;
+    margin: 2%;
 
+}.botonFavorite{
+    color: rgba(255, 0, 0, 0.404);
+    background-color: rgba(74, 10, 133, 0.445);
+    border-style: solid;
+    border-color:rgba(0, 77, 243, 0);
+    float:left;
+    border-radius: 20%;
+    font-size: 120%;
+    padding: 1%;
+    width: 15%;
+    margin: 2%;
 
+}
+.botonFavoriteOn:hover{
+    color: rgba(252, 76, 76, 0.774);
+    background-color: rgba(74, 10, 133, 0.562);
+    border-color: rgba(74, 10, 133, 0.692);
+}
+.botonFavorite:hover{
+    color: rgba(247, 109, 109, 0.582);
+    background-color: rgba(74, 10, 133, 0.384);
+    border-color: rgba(74, 10, 133, 0.562);
+}
 .cardTitle{
     font-size: 190%;
     color: black;

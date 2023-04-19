@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState,  useEffect } from "react";
 import styles from './Card.module.css'
 import { Link } from "react-router-dom";
 // import { ADD_FAV,REMOVE_FAV } from "../redux/action-types";
 import { connect } from "react-redux";
 import { addFav,removeFav } from "../redux/actions";
-import { useState } from "react";
-function Card({id,name,species,gender,image,onClose,addFav,removeFav}) {
+
+function Card({id,name,species,gender,image,onClose,addFav,removeFav,myFavorites}) {
    const [isFav,setIsFav] = useState(false)
    const handleFavorite=()=>{
       if (isFav){
@@ -17,10 +17,17 @@ function Card({id,name,species,gender,image,onClose,addFav,removeFav}) {
          addFav({id,name,species,gender,image})
       }
    }
+   useEffect(()=>{
+      myFavorites.forEach(fav => {
+         if(fav.id===id){
+            setIsFav(true)
+         }
+      });
+   },[])
    return (
       <div className={styles.card}>
-         <button className={styles.boton} onClick={()=>handleFavorite()}>X</button>
-         <button className={styles.boton} onClick={()=>onClose(id)}>X</button>
+         <button className={isFav ? styles.botonFavoriteOn : styles.botonFavorite} onClick={()=>handleFavorite()}>♥️</button>
+         <button className={styles.botonClose} onClick={()=>onClose(id)}>X</button>
          <br></br>
          <Link to={`/detail/${id}`}>
             <h2 className={styles.cardTitle}>{name}</h2>
@@ -32,9 +39,9 @@ function Card({id,name,species,gender,image,onClose,addFav,removeFav}) {
       </div>
    );
 }
-const mapStateToProps=()=>{
+const mapStateToProps=(state)=>{
    return{
-      
+      myFavorites: state.myFavorites
    }
 }
 const mapDispatchToProps=(dispatch)=>{
