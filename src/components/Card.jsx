@@ -1,26 +1,25 @@
 import React from "react";
 import styles from './Card.module.css'
 import { Link } from "react-router-dom";
-import { ADD_FAV,REMOVE_FAV } from "../redux/action-types";
-// class Card extends React.Component {
-//    render() {
-//       return (
-//          <div className={styles.card}>
-//             <button className={styles.boton} onClick={() => this.props.onClose(this.props.id)}>X</button>
-//             <h2>{this.props.name}</h2>
-//             <h2>{this.props.species}</h2>
-//             <h2>{this.props.gender}</h2>
-//             <img src={this.props.image} alt="" />
-//          </div>
-//       );
-//    }
-// }
-// export default Card;
-
-
-export default function Card({id,name,species,gender,image,onClose}) {
+// import { ADD_FAV,REMOVE_FAV } from "../redux/action-types";
+import { connect } from "react-redux";
+import { addFav,removeFav } from "../redux/actions";
+import { useState } from "react";
+function Card({id,name,species,gender,image,onClose,addFav,removeFav}) {
+   const [isFav,setIsFav] = useState(false)
+   const handleFavorite=()=>{
+      if (isFav){
+         setIsFav(false)
+         removeFav(id)
+      }
+      else {
+         setIsFav(true)
+         addFav({id,name,species,gender,image})
+      }
+   }
    return (
       <div className={styles.card}>
+         <button className={styles.boton} onClick={()=>handleFavorite()}>X</button>
          <button className={styles.boton} onClick={()=>onClose(id)}>X</button>
          <br></br>
          <Link to={`/detail/${id}`}>
@@ -33,6 +32,18 @@ export default function Card({id,name,species,gender,image,onClose}) {
       </div>
    );
 }
+const mapStateToProps=()=>{
+   return{
+      
+   }
+}
+const mapDispatchToProps=(dispatch)=>{
+   return{
+      addFav: (character)=>{dispatch(addFav(character))},
+      revomeFav: ()=>{dispatch(removeFav())}
+   }
+}
+export default connect (mapStateToProps,mapDispatchToProps)(Card);
 
 // class Card extends React.Component {
 //    constructor({id,name,species,gender,image,onClose}){
@@ -57,5 +68,19 @@ export default function Card({id,name,species,gender,image,onClose}) {
 //    }
 // }
 
+// class Card extends React.Component {
+//    render() {
+//       return (
+//          <div className={styles.card}>
+//             <button className={styles.boton} onClick={() => this.props.onClose(this.props.id)}>X</button>
+//             <h2>{this.props.name}</h2>
+//             <h2>{this.props.species}</h2>
+//             <h2>{this.props.gender}</h2>
+//             <img src={this.props.image} alt="" />
+//          </div>
+//       );
+//    }
+// }
+// export default Card;
 
 

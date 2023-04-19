@@ -10,7 +10,7 @@ class Nav extends React.Component{
             <div className={styles.nav}>
                 <div className={styles.links}>
                     <NavLink to="/home" className={styles.link}>
-                        Rick And Morty
+                        <img className={styles.logoHome} src="https://www.pngplay.com/wp-content/uploads/14/Rick-And-Morty-Logo-Transparent-File.png" alt="" />
                     </NavLink> 
                     <NavLink to="/about" className={styles.link}>
                        Favorites
