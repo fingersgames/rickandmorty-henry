@@ -13,8 +13,8 @@ export default function SearchBar({onSearch}) {
       <div className={styles.search}>
          <form onSubmit={handleSubmit}>
 
-         <input placeholder='Numero del 1 al 826'
-            type='search'
+         <input placeholder='N° del 1 al 826'
+            type='number'
             className={styles.searchInput}
             onChange={handleChange} 
          />

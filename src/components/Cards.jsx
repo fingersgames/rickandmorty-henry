@@ -6,8 +6,10 @@ const Cards=(props)=> {
    const { characters,onClose } = props;
    return <div className={styles.cards}>
       {
-         characters.map((e)=>
+         characters.length !== 0?<>
+         {characters.map((e)=>
             <Card 
+               key={e.id}
                id={e.id}
                name={e.name}
                species={e.species}
@@ -15,7 +17,8 @@ const Cards=(props)=> {
                image={e.image}
                onClose={onClose} 
             />
-         )
+         )}
+         </>: <p>Nada por aqui...</p>
       }
    </div>;
 }

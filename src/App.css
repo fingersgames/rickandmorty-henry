@@ -9,7 +9,6 @@ body {
   background-image: url(https://images3.alphacoders.com/812/812062.png);
   background-size:cover ;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 .App {
    display: flex;

@@ -19,8 +19,8 @@ const Detail=()=>{
             {
                 character.name?
                 <>
-                    <button className={styles.boton} onClick={()=>navigate('/home')}>X</button>
-                    <p className={styles.name}>{character.name}</p>
+                    <button className={styles.boton} onClick={()=>navigate('/home')}>x</button>
+                    <h3 className={styles.name}>{character.name}</h3>
                     <p>Status: {character.status}</p>
                     <p>Specie: {character.species}</p>
                     <p>Gender: {character.gender}</p>

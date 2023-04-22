@@ -1,14 +1,16 @@
 .search{
+    
     height: 90%;
     display: flex;   
     flex-direction: row;
+    flex-wrap: wrap;
     font-size:large;
     text-align:right;
     background-color: rgba(99, 24, 170, 0.945);
     padding: 0.3%;
     margin: 0.5%;
     border-radius: 10px;
-    width: 30%;
+    width: 20%;
     float: right;
     margin-left: auto;
     justify-content: flex-end;
@@ -16,6 +18,9 @@
 
 }
 .search input {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    width: 0%;
     padding: 1%;
     margin: 2%;
     margin-left: 7%;
@@ -23,7 +28,10 @@
 
 }
 .search button {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
     text-align: center;
+    flex-wrap: wrap;
     height: 100%;
     font-size: 110%;
     color: rgb(185, 242, 250);
@@ -45,5 +53,6 @@
 }
 .search form{
     display: flex; 
+    flex-wrap: wrap;
     flex-grow: 1; 
 }

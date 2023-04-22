@@ -1,5 +1,7 @@
 .nav{
     display: flex;   
+    flex-wrap: wrap;
+    flex-direction: row;
     font-size: large;
     text-align: right;
     background-color: rgba(110, 53, 216, 0.712);
@@ -12,16 +14,20 @@
     align-items: center;
 }
 .links {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 
 }
-.link {
+.links .link {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: auto;
     height: 100%;
-    font-size: 110%;
+    font-size: 100%;
     color: rgb(185, 242, 250);
     padding: 0.5%;
     padding-left: 5%;
@@ -36,6 +42,7 @@
 
 }
 .logout{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     height: 100%;
     font-size: 80%;

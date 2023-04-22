@@ -1,25 +1,31 @@
 .Detail {
-    font-size:large;
+
     text-align: center;
     background-color: rgba(0, 255, 255, 0.582);
     padding: 1%;
     margin: 15px;
     border-radius: 10px;
     width: 24%;
-    color:brown;
-    font-weight: 600;
+
     border-color:rgba(128, 24, 226, 0.945);
     border-style: solid;
 
 }
+.Detail p {
+    font-size: 100%;
+    color:brown;
+    margin: 4%;
+}
 .Detail img{
     border-radius: 10px;
+    width: 95%;
 }
 .name {
-    color: black;
-    text-decoration: underline;
-    font-size: 180%;
-    font-weight: 900;
+    color: rgb(13, 2, 63);
+ 
+    font-size: 150%;
+
+    margin-bottom: 0%;
 
 }
 .boton{
@@ -32,6 +38,7 @@
     font-size: 120%;
     padding: 1%;
     width: 8%;
+    font-size: small;
 
 }
 .boton:hover{

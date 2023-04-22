@@ -7,8 +7,12 @@ import About from './components/About'
 import Detail from './components/Detail'
 import { Routes, Route,useLocation, useNavigate} from 'react-router-dom';
 import FormNew from './components/FormNew.jsx'
+import Favorites from './components/Favorites';
 import React from 'react';
-function App() {
+import { connect } from 'react-redux';
+import { removeFav } from './redux/actions';
+
+function App({removeFav}) {
   const email='a@a.com'
   const pass='111111'
   const location = useLocation();
@@ -18,6 +22,7 @@ function App() {
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id !== id));
     console.log(characters)
+    removeFav(id)
   };
  const login=(userData)=>{
     if (userData.username===email && userData.password===pass){
@@ -58,6 +63,9 @@ function App() {
         <Route
           path='/' element={<FormNew login={login}/>}
         />
+        <Route
+          path='/favorites' element={<Favorites onClose={onClose} />}
+        />
         <Route 
           path='/home' element={<Cards characters={characters} onClose={onClose}/>}
         />
@@ -68,18 +76,15 @@ function App() {
           path='/detail/:detailId' element={<Detail />}
         />  
       </Routes>
-      
-
-
-      
-      
-      {/* <Stats /> */}
-
     </div>
   )
 }
-
-export default App
+const mapDispatchToProp=(dispatch)=>{
+  return {
+    removeFav: (id)=>{dispatch(removeFav(id))}
+  }
+}
+export default connect(null,mapDispatchToProp)(App)
 
 
 

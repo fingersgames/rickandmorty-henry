@@ -12,7 +12,7 @@ class Nav extends React.Component{
                     <NavLink to="/home" className={styles.link}>
                         <img className={styles.logoHome} src="https://www.pngplay.com/wp-content/uploads/14/Rick-And-Morty-Logo-Transparent-File.png" alt="" />
                     </NavLink> 
-                    <NavLink to="/about" className={styles.link}>
+                    <NavLink to="/favorites" className={styles.link}>
                        Favorites
                     </NavLink>                    
                     <NavLink to="/about" className={styles.link}>

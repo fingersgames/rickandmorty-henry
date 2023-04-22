@@ -1,6 +1,7 @@
-import { ADD_FAV,REMOVE_FAV } from "./action-types";
+import { ADD_FAV,FILTER,ORDER,REMOVE_FAV } from "./action-types";
 const initialState={
-    myFavorites:[]
+    myFavorites:[],
+    allFavorites:[]
 }
 
 const reducer = (state=initialState,{type,payload})=>{
@@ -8,12 +9,32 @@ const reducer = (state=initialState,{type,payload})=>{
         case ADD_FAV:
             return {
                 ...state,
-                myFavorites:[...state.myFavorites, payload ]
+                myFavorites:[...state.allFavorites, payload ],
+                allFavorites:[...state.allFavorites, payload ]
             }
         case REMOVE_FAV:
             return {
                 ...state,
-                myFavorites: state.myFavorites.filter(fav=>fav.id!=payload)
+                allFavorites: state.allFavorites.filter(fav=>fav.id!=payload),
+                myFavorites: state.allFavorites.filter(fav=>fav.id!=payload)
+            }
+        case FILTER:
+            return {
+                ...state,
+                myFavorites:
+                payload==='x'? state.allFavorites:
+                state.allFavorites.filter(favFilter=>favFilter.gender===payload)
+            }
+        case ORDER:
+            let copy=[...state.myFavorites]
+            if (payload==='A') 
+                copy.sort((a,b)=> a.id - b.id)
+            else if (payload==='D') 
+                copy.sort((a,b)=> b.id - a.id)
+            else copy=[...state.allFavorites]
+            return {
+                ...state,
+                myFavorites:copy
             }
         default:
             return{...state}
