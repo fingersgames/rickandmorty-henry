@@ -8,9 +8,9 @@ const Detail=()=>{
     const {detailId} = useParams();
     const [character,setCharacter]=useState([]);
     useEffect(()=>{
-        const URL_BASE='https://be-a-rym.up.railway.app/api'
-        const KEY='1359a0baf0ef.3553cb7fc991adca2846'
-        axios(`${URL_BASE}/character/${detailId}?key=${KEY}`)
+        const URL_BASE='http://127.0.0.1:3001/rickandmorty'
+        // const KEY='1359a0baf0ef.3553cb7fc991adca2846'
+        axios(`${URL_BASE}/character/${detailId}/detail`)
         .then(response=>setCharacter(response.data))
         }
     ,[])
@@ -20,7 +20,7 @@ const Detail=()=>{
                 character.name?
                 <>
                     <button className={styles.boton} onClick={()=>navigate('/home')}>x</button>
-                    <h3 className={styles.name}>{character.name}</h3>
+                    <div className={styles.cardTitle}>{character.name}</div>
                     <p>Status: {character.status}</p>
                     <p>Specie: {character.species}</p>
                     <p>Gender: {character.gender}</p>

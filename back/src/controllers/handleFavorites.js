@@ -6,7 +6,7 @@ const postFav=(req,res)=>{
 }
 const deleteFav=(req,res)=>{
     const id=req.params.id
-    myFavorites=myFavorites.filter(a=>a.id!== +id)
+    myFavorites=myFavorites.filter(a=>a.id!=id)
     return res.json(myFavorites)
 }
 module.exports={

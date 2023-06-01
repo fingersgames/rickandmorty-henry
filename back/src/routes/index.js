@@ -1,8 +1,10 @@
 const {login}=require('../controllers/login')
 const {getCharByID}=require('../controllers/getCharByID')
-const {getCharDetail}=require('../controllers/getCharDetail')
+const getCharDetail=require('../controllers/getCharDetail')
 const {deleteFav, postFav} =require('../controllers/handleFavorites')
 const router = require('express').Router()
+
+router.get("/login",login)
 
 router.get("/character/:id",(req,res)=>{
     getCharByID(req,res)
@@ -18,3 +20,6 @@ router.post('/fav',(req,res)=>{
 router.delete('/fav/:id',(req,res)=>{
     deleteFav(req,res)
 })
+
+
+module.exports=router

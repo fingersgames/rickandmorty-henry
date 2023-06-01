@@ -1,0 +1,24 @@
+.filtros{
+    display: flex;
+    margin: 1%;
+    margin-bottom: -1%;
+}
+select{
+    background-color: rgba(53, 205, 216, 0.425);
+    border-radius: 7px;
+    border-style: hidden;
+    border-style: solid;
+    border-color: rgba(74, 10, 133, 0.945);
+}
+option{
+    margin:1%;
+    background-color: rgba(110, 53, 216, 0.274);
+    border-radius: 7px;
+    border-style: hidden;
+}
+option:hover{
+    border-style: solid;
+    border-color: rgba(74, 10, 133, 0.945);
+    background-color: rgba(110, 53, 216, 0.123);
+    
+}

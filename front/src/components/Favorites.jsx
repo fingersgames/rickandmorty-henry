@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Cards from "./Cards";
 import { connect,useDispatch } from "react-redux";
 import { orderCards,filterCards } from "../redux/actions";
-
+import styles from './Favorites.module.css'
 const Favorites=({myFavorites, onClose})=>{
     const dispatch=useDispatch();
     const handleFilter=(event)=>{
@@ -14,15 +14,17 @@ const Favorites=({myFavorites, onClose})=>{
         dispatch(orderCards(event.target.value))
     }
     return (
-        <div >
-        <label htmlFor="order">Ordenar por: </label>
+        <>
+        <div className={styles.filtros}>
+        <label htmlFor="order">Ordenar por: &nbsp; </label>
         <select id="order"  onChange={handleOrder} defaultValue='B'>
             <option value="B" disabled hidden></option>
             <option value="x">Ninguno</option>
             <option value="A">Ascendente</option>
             <option value="D">Descendente</option>
         </select>
-        <label htmlFor="filter">Filtrar por: </label>
+       
+        <label htmlFor="filter">&nbsp; Filtrar por: &nbsp;</label>
         <select id="filter"  onChange={handleFilter} defaultValue='B'>
             <option value="B" disable hidden></option>
             <option value="x">Ninguno</option>
@@ -30,9 +32,10 @@ const Favorites=({myFavorites, onClose})=>{
             <option value="Female">Female</option>
             <option value="Genderless">Genderless</option>
             <option value="unknown">unknown</option>
-        </select>
-        <Cards characters={myFavorites} onClose={onClose}/>
+        </select> 
         </div>
+        <Cards characters={myFavorites} onClose={onClose}/>
+        </>
     )
     
 }

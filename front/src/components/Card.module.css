@@ -71,12 +71,14 @@
     background-color: rgba(74, 10, 133, 0.384);
     border-color: rgba(74, 10, 133, 0.562);
 }
-.card .cardTitle {
+.cardTitle {
     font-size: 200%;
     color: rgb(12, 1, 51);
 
 }
 .card h2 {
     font-size: 140%;
+    color:brown;
+    font-weight: 100;
 }
 

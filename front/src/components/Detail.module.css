@@ -20,12 +20,11 @@
     border-radius: 10px;
     width: 95%;
 }
-.name {
-    color: rgb(13, 2, 63);
- 
-    font-size: 150%;
-
-    margin-bottom: 0%;
+.cardTitle{
+    font-size: 200%;
+    color: rgb(12, 1, 51);
+    margin-bottom: 3%;
+    margin-top: 9%;
 
 }
 .boton{

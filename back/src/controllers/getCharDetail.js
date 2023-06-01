@@ -2,9 +2,9 @@ const URL="https://rickandmortyapi.com/api/character/"
 const axios=require("axios")
 const getCharByID=(req,res)=>{
     const id=req.params.id
-    axios(URL,'/',id)
+    axios(URL+'/'+id)
     .then(response=>response.data)
-    .then(({status,name,species,origin,image,gender,origin})=>{
+    .then(({status,name,species,origin,image,gender})=>{
         if(name){
             const character={
                 id,
@@ -13,8 +13,7 @@ const getCharByID=(req,res)=>{
                 species,
                 origin,
                 image,
-                gender,
-                origin
+                gender
             }
             return res.json(character)//devueleve el 200 por defecto:status(200)
         }
@@ -22,4 +21,4 @@ const getCharByID=(req,res)=>{
     })
     .catch(error=> res.status(500).send(error.message))
 }
-module.exports.getChatByID
+module.exports=getCharByID

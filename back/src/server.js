@@ -2,8 +2,9 @@ const express=require("express")
 const server=express()
 const router=require('./routes/index')
 const PORT=3001
-
+const morgan=require('morgan')
 server.use(express.json())
+server.use(morgan('dev'))
 server.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*')
     res.header('Access-Control-Allow-Credentials','true')
@@ -11,7 +12,7 @@ server.use((req,res,next)=>{
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE')
     next()
 })
-server.use('/rickandmorty', router)
+server.use("/rickandmorty", router)
 server.listen(PORT,()=>{
     console.log('Servidor en el puerto 3001 ', PORT)
 })
